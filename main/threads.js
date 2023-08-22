@@ -7,5 +7,5 @@ crypto.pbkdf2('a', 'b', 100000, 512, 'sha512', () => {
 })
 
 crypto.pbkdf2('a', 'b', 100000, 512, 'sha512', () => {
-    console.log('2:', Date.now() - start);
+    console.log('2:', Date.now() - start)
 })
