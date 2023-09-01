@@ -1,3 +1,4 @@
+process.env.UV_THREADPOOL_SIZE = 1; // moditify it with diff values
 const fs = require('fs');
 const https = require('https');
 const crypto = require('crypto');
@@ -14,6 +15,8 @@ function doRequest() {
     .end();
 }
 
+
+
 function doHash() {
     crypto.pbkdf2('a', 'b', 100000, 512, 'sha512', () => {
         console.log('Hash:', Date.now() - start);
@@ -26,7 +29,6 @@ fs.readFile('multitask.js', 'utf8', () => {
     console.log('FS:', Date.now() - start);
 });
 
-// doHash();
-// doHash();
-// doHash();
-// doHash();
+doHash();
+doHash();
+doHash();
